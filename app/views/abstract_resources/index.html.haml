@@ -1,0 +1,46 @@
+= render partial: 'title'
+-# .row
+-# 	.col.s12
+-# 		%h3= yield :title
+
+.row{ style: "margin-top: 20px"}
+	.col.s12.m12.l12
+		%form#list-search-form.form-inline{ action: resources_url( resources, controller: params[:controller]), method: "get"}
+			- if resources.respond_to? :total_count
+				%label
+					%span.blue-grey-text{style: "margin-top: 6px"}
+						= t("#{resources_name}.posts", size: resources.total_count)
+				%br
+			%input.search-list.form-control{ style: "width: 75%", type: "text", id: "q", name: "q", placeholder: t("#{params[:controller]}.search_placeholder"), value: "#{params[:q] || ''}" }
+			%a.search-list.btn.btn-primary{ type: "submit"}= t('search_button_text')
+
+			-# .form-group
+			-# 	-# %label{ for: "q" }
+			-# 	%input.search-list.form-control{ type: "text", id: "q", name: "q", placeholder: t("#{params[:controller]}.search_placeholder"), value: "#{params[:q] || ''}" }
+			-# 	.collection{ style: "border: 0px"}
+			-# 		%a.search-list.btn.btn-primary{ type: "submit"}= t('search_button_text')
+			-# 		- if resources.respond_to? :total_count
+			-# 			%span.blue-grey-text{style: "margin-top: 6px"}
+			-# 				= t("#{resources_name}.posts", size: resources.total_count)
+
+.row
+	.col.s12
+		&nbsp;
+.row
+	.col.s12
+		%table.bordered.responsive-table.striped.hoverable.page.resources_table{ id: "#{resource_name}_table_list"}
+			= render partial: resources_name
+
+= build_fab_button build_fab_options( resource, fab_button_options.merge!( action: params[:action] ))
+
+:coffeescript
+
+	$ ->
+		# console.log 'calling scrollTable ' + $('table.resources_table')[0].id
+		# if App.ps
+		# 	if App.ps.scrollTimeout
+		# 		clearTimeout App.ps.scrollTimeout
+		# 	if App.ps.lastPage > App.ps.nextPage
+		# 		App.shared.callToast 'Der er mere end én side resultater - scroll ned for at se flere!'
+		#
+		# App.ps.scrollTable('table.resources_table')

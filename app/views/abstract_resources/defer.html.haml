@@ -1,0 +1,5 @@
+= link_to prefer_url( parent,resource), class: 'deferred grey-text', ref: resource._ref, data: { id: resource.id }, title: t('prefer_%s' % resource_name) do
+  %i.material-icons.deferred.grey-text bookmark_border
+
+:javascript
+  eval("#{set_toasts}");

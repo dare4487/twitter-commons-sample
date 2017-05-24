@@ -1,0 +1,11 @@
+<%- format = request.format.symbol.to_s %>
+<hr/>
+<h4>Explanation:</h4>
+You 'hit' the '<%= params[:action]%>' action - and got the abstracted view template in response
+(I'm guessing here: because the <%= params[:controller].pluralize.capitalize %>Controller is wired to inherit from AbstractedController)!
+<h4>Errand</h4>
+Add an <%= params[:action]%>.<%= format %>.&lt;templating-language-suffix&gt; file to the folder <%= Rails.root %>/app/views/<%= params[:controller].pluralize %>
+<h4>Example</h4>
+<pre>
+  <%= Rails.root %>/app/views/<%= params[:controller].pluralize %>/<strong><%= params[:action]%>.<%= format %>.haml</strong>
+</pre>

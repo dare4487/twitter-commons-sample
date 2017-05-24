@@ -1,0 +1,34 @@
+{
+  "name": "abstracted",
+  "version": "0.0.0",
+  "authors": [
+    "Walther H Diechmann <walther@diechmann.net>"
+  ],
+  "description": "abstracted gem providing general functions",
+  "main": "",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "abstracted"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "selectize": "~0.12.1",
+    "sweetalert": "~1.1.0",
+    "microplugin": "~0.0.3"
+  }
+}

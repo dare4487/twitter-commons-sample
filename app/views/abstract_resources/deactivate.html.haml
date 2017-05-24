@@ -1,0 +1,5 @@
+= link_to activate_url(resource), class: 'deactivated red-text', title: t('activate_%s' % resource_name) do
+  %i.material-icons pause
+
+:javascript
+  eval("#{set_toasts}");

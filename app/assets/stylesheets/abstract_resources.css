@@ -1,0 +1,11 @@
+/*
+ *  Place all the styles related to the matching controller here.
+ *  They will automatically be included in application.css.
+ *
+ * require_self
+ *= require sweetalert
+ * require materialize-tags/dist/css/materialize-tags.css
+ *= require selectize/dist/css/selectize.css
+ *= require balloon.min.css
+ * require_tree .
+ */

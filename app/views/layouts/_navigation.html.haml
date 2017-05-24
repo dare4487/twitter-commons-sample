@@ -1,0 +1,10 @@
+/ fisk
+%nav.top-nav
+
+  %ul.hide-on-med-and-down{ style: "240px" }
+    = render 'layouts/navigation_links'
+  %ul#nav-mobile.side-nav
+    = render 'layouts/navigation_links'
+
+  %a.button-collapse.top-nav.full{ href:"#", :"data-activates"=>"nav-mobile"}
+    %i.material-icons menu
