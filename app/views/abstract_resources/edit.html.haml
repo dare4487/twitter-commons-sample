@@ -1,8 +1,0 @@
-.row
-	.col.s12
-		%h3= render partial: 'title'
-- @disabled = false
-= render 'form'
-= render partial: 'edit' rescue nil
-- unless params[:format] == 'js'
-	= build_fab_button build_fab_options( resource, fab_button_options.merge!( action: params[:action] ))
